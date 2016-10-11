@@ -72,15 +72,16 @@ public class AutoVoter extends Thread {
         }
         cg.getDriver().close();
         for (AutoVoter a : toExecuteItems) {
+            System.out.println(a.account+"|"+a.uuid+"|"+a.ticket);
             a.start();
         }
-        try {
+    /*  try {
             BufferedWriter out = new BufferedWriter(new FileWriter("test.txt"));
             out.write("");
             out.close();
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     @Override
@@ -104,16 +105,13 @@ public class AutoVoter extends Thread {
                 ex.printStackTrace();
             }
             if (vote.body().startsWith("{\"code\":200")) {
-                System.out.println(account + " 投票成功" + df.format(new Date()));
+                System.out.println(account + " 投票成功" + df.format(new Date())+"\r\n来自服务器的原始回复消息：" + vote.statusMessage()+"\r\n来自服务器的原始回复消息体：" + vote.body());
 
             } else if (vote.body().startsWith("{\"code\":-1007")) {
-                System.out.println(account + " 还不到一个小时！" + df.format(new Date()));
+                System.out.println(account + " 还不到一个小时！" + df.format(new Date())+"\r\n来自服务器的原始回复消息：" + vote.statusMessage()+"\r\n来自服务器的原始回复消息体：" + vote.body());
             } else {
-                System.out.println(account + " 投票失败。" + df.format(new Date()));
+                System.out.println(account + " 投票失败！" + df.format(new Date())+"\r\n来自服务器的原始回复消息：" + vote.statusMessage()+"\r\n来自服务器的原始回复消息体：" + vote.body());
             }
-                System.out.println( "来自服务器的原始回复消息：" + vote.statusMessage());
-                System.out.println( "来自服务器的原始回复消息体：" + vote.body());
-                System.out.println( "——————————————————————");
 
             try {
                 Thread.sleep(1000 * 60 * 60 + 1000);

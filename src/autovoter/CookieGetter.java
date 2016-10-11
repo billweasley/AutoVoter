@@ -6,7 +6,6 @@ import java.util.Scanner;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -29,10 +28,12 @@ public class CookieGetter {
     }
 
     public CookieGetter() {
-        driver = new EdgeDriver();  //for Windows 10
-       //driver = new FirefoxDriver();  //for macOS
+
 
         System.getProperties().setProperty("webdriver.edge.driver", "MicrosoftWebDriver.exe"); //for Windows 10
+        //System.getProperties().setProperty("webdriver.firefox.driver", "geckodriver"); //for macOS
+        driver = new EdgeDriver();  //for Windows 10
+       //driver = new FirefoxDriver();  //for macOS
         driver.get("http://www.mgtv.com/v/2016/jyj2016/");
     }
 

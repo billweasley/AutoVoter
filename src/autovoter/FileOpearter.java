@@ -31,9 +31,9 @@ public class FileOpearter {
     public boolean  writeRecord(String account, String uuid, String HDCN) {
         String record = account + "@" + uuid + "@" + HDCN;
         try {
-            FileOutputStream out = new FileOutputStream("test.txt");
+            FileOutputStream out = new FileOutputStream("test.txt",true);
             PrintStream p = new PrintStream(out);
-            p.append(record+"\n");
+            p.append(record+"\r\n");
             return true;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
