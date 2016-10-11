@@ -24,5 +24,5 @@ accounts.txt的格式为每单独行：用户名@密码（回车符），最后�
 
 #注意事项
 1. Windows下需要指定Scanner的编码，因为通常中文版的系统编码是GBK,但是netbean的默认编码是utf-8;
-2. 默认driver在Windows下是Edge, 在macOS下是Firefox,需要按照相应浏览器（建议非Windows 10用户尝试IE driver, 换用不同浏览器需到[selenium](http://www.seleniumhq.org/)下载相应driver并以默认路径安装该浏览器）  
+2. 默认driver在Windows下是Edge, 在macOS下是Firefox,需要系统内有安装相应的浏览器（建议非Windows 10用户尝试IE driver, 换用不同浏览器需到[selenium](http://www.seleniumhq.org/)下载相应driver并以默认路径安装该浏览器）  
     **经测试，Firefox for Windows driver目前（11/Oct./2016）处于不可用状态**
