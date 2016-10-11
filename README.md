@@ -14,9 +14,9 @@ accounts.txt的格式为每单独行：用户名@密码（回车符），最后�
 因而模拟登录如果用传统的构造包方式会相对复杂，于是我偷懒用了自动化测试工具[selenium](http://www.seleniumhq.org/)。    
 即通过调用selenium的API嵌入一个浏览器，登录后拿到cookie。再抽取相应字段定时以GET方式访问投票php。  
 访问投票php需要以下五个参数：  
-+ sid （奖项）  
++ sid (奖项) 
 + star_id (明星)  
-+ client （访问端）  
++ client (访问端)
 + uuid (账户)  
 + ticket (不明，可能类似校验)  
 
