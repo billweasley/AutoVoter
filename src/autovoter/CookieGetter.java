@@ -1,5 +1,6 @@
 package autovoter;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -30,10 +31,10 @@ public class CookieGetter {
     public CookieGetter() {
 
 
-        System.getProperties().setProperty("webdriver.edge.driver", "MicrosoftWebDriver.exe"); //for Windows 10
-        //System.getProperties().setProperty("webdriver.firefox.driver", "geckodriver"); //for macOS
-        driver = new EdgeDriver();  //for Windows 10
-       //driver = new FirefoxDriver();  //for macOS
+        //System.getProperties().setProperty("webdriver.edge.driver", "MicrosoftWebDriver.exe"); //for Windows 10
+        System.getProperties().setProperty("webdriver.gecko.driver", "geckodriver"); //for macOS
+        //driver = new EdgeDriver();  //for Windows 10
+        driver = new FirefoxDriver();  //for macOS
         driver.get("http://www.mgtv.com/v/2016/jyj2016/");
     }
 
@@ -60,8 +61,8 @@ public class CookieGetter {
         driver.findElement(By.className("hover")).click();
 
         driver.findElement(By.className("password")).sendKeys(pwd);
-        Scanner sc = new Scanner(System.in, "GBK"); //for Windows 10
-       // Scanner sc = new Scanner(System.in); //for macOS
+       // Scanner sc = new Scanner(System.in, "GBK"); //for Windows 10
+        Scanner sc = new Scanner(System.in); //for macOS
         while (res.get("uuid") == null || res.get("HDCN") == null) {
             System.out.println("请在此输入验证码：");
             String enteredVerify = sc.nextLine();
