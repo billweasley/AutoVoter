@@ -29,7 +29,11 @@ public class CookieGetter {
 
     public CookieGetter() {
 
-
+        /*way of using geckdriver for version 48 and plus*/
+        /*
+        System.getProperties().setProperty("webdriver.gecko.driver", "geckodriver.exe"); //require the latest geckodriver.exe
+        driver = new FirefoxDriver(); 
+        */
         System.getProperties().setProperty("webdriver.edge.driver", "MicrosoftWebDriver.exe"); //for Windows 10
         //System.getProperties().setProperty("webdriver.firefox.driver", "geckodriver"); //for macOS
         driver = new EdgeDriver();  //for Windows 10
